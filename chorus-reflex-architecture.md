@@ -4,8 +4,6 @@
 **Author:** Mentat / Ulli  
 **Purpose:** Define the multi-tier reflex ecosystem uniting Cortex, Ganglia, and Daemons.
 
----
-
 ## 1. System Overview
 CHORUS models an artificial nervous system composed of three tiers:
 
@@ -19,19 +17,12 @@ Data flows **down** as intent, **up** as telemetry.
 
 [CORTEX] ←→ [GANGLIA] ←→ [DAEMONS]
 
-yaml
-Copy code
-
----
-
 ## 2. Transport & Messaging
 | Direction | Protocol | Purpose |
 |------------|-----------|----------|
 | Downstream | **Chronome** | control, model updates, coordination |
 | Upstream | **Alembic** | telemetry, metrics, compressed data |
 | Lateral | **Mesh-Bus** (UDP multicast / QUIC) | peer-to-peer coordination |
-
----
 
 ## 3. Training & Deployment
 | Stage | Model | Environment | Duration |
@@ -42,16 +33,12 @@ Copy code
 
 Ganglia periodically retrain Reflexes offline and push verified updates outward.
 
----
-
 ## 4. Advantages
 - **Energy locality:** most decisions near the data source.  
 - **Graceful degradation:** higher-tier loss ≠ system failure.  
 - **Composable:** new nodes plug in, no retraining required.  
 - **Heterogeneous compute:** each node contributes proportionally.  
 - **Human legibility:** clear functional boundaries.
-
----
 
 ## 5. Deployment Topology Example
 CORTEX-PC (RTX)
@@ -65,18 +52,11 @@ CORTEX-PC (RTX)
 └─ ganglion-02 (NUC)
 └─ Provides: speech recognition, local cache
 
-yaml
-Copy code
-
----
-
 ## 6. Next Steps
 1. Formalize **Chronome-Lite** protocol.  
 2. Integrate **Gemma / Candle** inference on Ganglia.  
 3. Build **`chorusctl`** for deployment & discovery.  
 4. Benchmark reflex propagation latency and stability.  
-
----
 
 **Guiding Principle:**  
 > *Every node, from RTX to Pi Zero, contributes to collective intelligence in proportion to its power.*

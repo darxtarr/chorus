@@ -35,7 +35,7 @@ Success = curvature restored (Δ ≥ 0.15, intra ≥ 0.6, cross ≤ 0.35).
 
 ---
 
-## 4. Memory Plane (future)
+## 4. Memory Plane (in progress - mnematode)
 Shared, dimensionality-aware store for embeddings, code, and sensor data.
 
 - Append-only, content-addressed (BLAKE3).  
